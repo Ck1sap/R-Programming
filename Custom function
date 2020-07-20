@@ -1,0 +1,32 @@
+# Load the requested library
+ 
+library(dplyr)
+
+# Load  mtcars dataset
+ mtcars
+ 
+# copy mtcars dataset to data 
+
+data<- mtcars
+
+# custom  function  creation 
+
+ custom function 
+ 
+ mpg_category<- function(mpg){
+   if(mpg > 30){
+      return("High")
+    } else if(mpg > 20){
+      return("Medium")
+    }
+   return("Low")
+ }
+
+# use custom function to execute the results  
+ 
+ data<- data %>% mutate(mpg_category = lapply(X = data$mpg, FUN = mpg_category))
+ 
+# use custom function to execute the results  
+
+View(data)
+ 
